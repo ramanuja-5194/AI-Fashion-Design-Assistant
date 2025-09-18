@@ -1,0 +1,82 @@
+# AI Fashion Design Assistant - Requirements (No Heavy Computer Vision)
+
+# Deep Learning Frameworks
+torch
+torchvision
+transformers
+
+# Basic Image Processing (No Heavy CV)
+Pillow
+scikit-image
+
+# CLIP and Advanced Models
+clip-by-openai
+ftfy
+regex
+tqdm
+
+# Web Framework
+streamlit
+fastapi
+uvicorn
+
+# Data Processing
+numpy
+pandas
+scikit-learn
+scipy
+
+# Basic Image Processing (Minimal CV)
+albumentations
+
+# Utilities
+requests
+python-multipart
+aiofiles
+python-jose[cryptography]
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Development
+pytest
+black
+flake8
+pre-commit
+
+# Machine Learning Libraries
+xgboost
+lightgbm
+
+# API and Database
+sqlalchemy
+alembic
+redis
+
+# Deployment
+docker
+gunicorn
+
+# YAML Configuration
+pyyaml
+
+# Color Analysis
+colormath
+webcolors
+
+# Text Processing for Recommendations
+nltk
+textblob
+
+# Note: Removed heavy computer vision libraries:
+# - opencv-python (heavy CV processing)
+# - mediapipe (pose estimation for virtual try-on)
+# - Advanced CV libraries
+
+# Focus on:
+# - Text-to-image generation (CLIP + GAN)
+# - Style transfer (artistic, not CV-heavy)  
+# - Trend analysis (color/pattern analysis, not object detection)
+# - Fashion recommendations (collaborative filtering)

@@ -1,0 +1,24 @@
+datasets:
+  fashion_mnist:
+    path: "./data/fashion_mnist"
+    download: true
+  
+  deepfashion:
+    path: "./data/deepfashion"
+    download: false
+  
+  custom_fashion:
+    path: "./data/custom"
+    
+image_processing:
+  input_size: [256, 256]
+  normalize: true
+  augmentation:
+    horizontal_flip: 0.5
+    color_jitter: 0.2
+    rotation: 15
+
+dataloaders:
+  num_workers: 4
+  pin_memory: true
+  prefetch_factor: 2

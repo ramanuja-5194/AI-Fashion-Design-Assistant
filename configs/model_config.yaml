@@ -1,0 +1,62 @@
+text_to_fashion:
+  model_name: "clip_stylegan"
+  clip_model: "ViT-B/32"
+  stylegan_dim: 512
+  num_layers: 8
+  learning_rate: 0.0002
+  batch_size: 16
+
+style_transfer:
+  model_name: "neural_style_transfer"
+  content_weight: 1.0
+  style_weight: 10.0
+  learning_rate: 0.0001
+  batch_size: 8
+  preset_styles: ["impressionist", "abstract", "pop_art", "vintage"]
+
+fashion_recommender:
+  model_name: "collaborative_filtering"
+  embedding_dim: 256
+  learning_rate: 0.001
+  batch_size: 32
+
+trend_predictor:
+  model_name: "trend_analyzer"
+  analysis_methods: ["color_analysis", "style_classification", "market_simulation"]
+  learning_rate: 0.001
+  batch_size: 32
+
+training:
+  num_epochs: 100
+  save_frequency: 10
+  validation_frequency: 5
+  early_stopping_patience: 20
+EOF
+
+cat > configs/data_config.yaml << 'EOF'
+# Data Configuration
+
+datasets:
+  fashion_mnist:
+    path: "./data/fashion_mnist"
+    download: true
+  
+  deepfashion:
+    path: "./data/deepfashion"
+    download: false
+  
+  custom_fashion:
+    path: "./data/custom"
+    
+image_processing:
+  input_size: [256, 256]
+  normalize: true
+  augmentation:
+    horizontal_flip: 0.5
+    color_jitter: 0.2
+    rotation: 15
+
+dataloaders:
+  num_workers: 4
+  pin_memory: true
+  prefetch_factor: 2
