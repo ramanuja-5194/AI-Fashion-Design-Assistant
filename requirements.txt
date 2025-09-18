@@ -1,82 +1,67 @@
-# AI Fashion Design Assistant - Requirements (No Heavy Computer Vision)
+# AI Fashion Design Assistant - Requirements (Compatible Versions)
 
-# Deep Learning Frameworks
-torch
-torchvision
-transformers
+# Deep Learning Frameworks (Compatible versions)
+torch>=1.13.0,<2.1.0
+torchvision>=0.14.0,<0.16.0
+transformers>=4.20.0
 
-# Basic Image Processing (No Heavy CV)
-Pillow
-scikit-image
+# Basic Image Processing
+Pillow>=9.0.0
+scikit-image>=0.19.0
 
-# CLIP and Advanced Models
-clip-by-openai
-ftfy
-regex
-tqdm
+# CLIP (Use git+https for latest compatible version)
+git+https://github.com/openai/CLIP.git
+ftfy>=6.1.0
+regex>=2022.0.0
+tqdm>=4.64.0
+
+# Alternative CLIP if above doesn't work
+# open-clip-torch>=2.0.0
 
 # Web Framework
-streamlit
-fastapi
-uvicorn
+streamlit>=1.15.0
+fastapi>=0.85.0
+uvicorn>=0.18.0
 
 # Data Processing
-numpy
-pandas
-scikit-learn
-scipy
+numpy>=1.21.0,<1.25.0
+pandas>=1.4.0
+scikit-learn>=1.1.0
+scipy>=1.8.0
 
-# Basic Image Processing (Minimal CV)
-albumentations
+# Basic Image Processing
+# albumentations>=1.2.0  # Commented out to avoid conflicts
 
 # Utilities
-requests
-python-multipart
-aiofiles
-python-jose[cryptography]
+requests>=2.28.0
+python-multipart>=0.0.5
+aiofiles>=0.8.0
 
 # Visualization
-matplotlib
-seaborn
-plotly
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.10.0
 
 # Development
-pytest
-black
-flake8
-pre-commit
+pytest>=7.0.0
 
 # Machine Learning Libraries
-xgboost
-lightgbm
-
-# API and Database
-sqlalchemy
-alembic
-redis
-
-# Deployment
-docker
-gunicorn
+# xgboost>=1.6.0  # Commented out to avoid conflicts
+# lightgbm>=3.3.0
 
 # YAML Configuration
-pyyaml
+pyyaml>=6.0
 
 # Color Analysis
-colormath
-webcolors
+webcolors>=1.12
 
 # Text Processing for Recommendations
-nltk
-textblob
+nltk>=3.7
 
-# Note: Removed heavy computer vision libraries:
-# - opencv-python (heavy CV processing)
-# - mediapipe (pose estimation for virtual try-on)
-# - Advanced CV libraries
-
-# Focus on:
-# - Text-to-image generation (CLIP + GAN)
-# - Style transfer (artistic, not CV-heavy)  
-# - Trend analysis (color/pattern analysis, not object detection)
-# - Fashion recommendations (collaborative filtering)
+# If you get conflicts, install in this order:
+# pip install torch==1.13.1 torchvision==0.14.1
+# pip install git+https://github.com/openai/CLIP.git
+# pip install streamlit fastapi uvicorn
+# pip install numpy pandas scikit-learn
+# pip install matplotlib seaborn plotly
+# pip install pyyaml webcolors nltk requests
